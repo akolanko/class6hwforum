@@ -1,0 +1,36 @@
+<h2><%= link_to @user.username, user_path(@user.id), :class => "altlink" %>'s Topics</h2>
+<div class="indent">
+	<% if @user.topics.first %>
+		<% @user.topics.each do |topic| %>
+			<h4><%= link_to topic.title, user_topic_path(@user.id, topic.id) %></h4>
+			<div class="indent">
+				<span class="graytext">[posted <%=time_ago_in_words(topic.created_at) %> ago]
+					<br>
+					<% if @user == current_user %>
+						<%= link_to "[Delete Post]", user_topic_path(@user.id, topic.id), method: :delete, confirm: "Are you sure you want to delete this post?" %>
+					<% end %>
+				</span>
+			</div>
+		<% end %>
+	<% else %>
+		<%= @user.username %> has not started any discussions yet.
+	<% end %>
+</div>
+
+<% if @user == current_user %>
+	<br><br>
+	<h3>Create a New Topic...</h3>
+		<div class="form">
+			<%= form_for [@user, @topic] do |f| %>
+				<%= f.label :title, "Title:" %>
+				<br>
+				<%= f.text_field :title %>
+				<br>
+				<%= f.label :body, "Content:" %>
+				<br>
+				<%= f.text_area :body %>
+				<br>
+				<%= f.submit "Post", :class => "submit" %>
+			<% end %>
+		</div>
+<% end %>

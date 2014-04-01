@@ -1,0 +1,209 @@
+/*ALL PAGES*/
+
+body{
+	font-family: "Georgia", serif;
+	font-size: 14px;
+	letter-spacing: .1em;
+	color: #bad3e4;
+}
+
+#header{
+	width: 100%;
+	height: 40px;
+	position: fixed;
+	color: #a1b7c5;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+#container{
+	width: 900px;
+	margin: 0 auto;
+	padding: 40px 0 0 0;
+}
+
+#colone{
+	width: 200px;
+	height: 10px;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+#coltwo{
+	width: 580px;
+	margin: 0;
+	padding: 40px 50px 0 70px;
+	float: left;
+}
+
+.clear{
+	clear: both;
+	height: 1px;
+}
+
+#navbar{
+	width: 180px;
+	position: fixed;
+	color: #a1b7c5;
+	margin: 0;
+	padding: 10px 0 0 20px;
+}
+
+ul#nav{
+	list-style: none;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-transform: lowercase;
+	letter-spacing: .3em;
+}
+
+ul#nav li{
+	padding: 10px 0;
+}
+
+a:link{
+	text-decoration: none;
+	color: #a1b7c5;
+	text-transform: lowercase;
+}
+
+a:visited{
+	color: #a1b7c5;
+}
+
+a:hover{
+	text-decoration: none;
+	color: #bad3e4;
+}
+
+.altlink:link{
+	text-decoration: none;
+	color: #bad3e4;
+	text-transform: lowercase;
+}
+
+.altlink:visited{
+	color: #bad3e4;
+}
+
+.altlink:hover{
+	color: #b8c0d5;
+}
+
+h1{
+	font-size: 2.1em;
+	margin: 0;
+	padding: 10px;
+	text-transform: lowercase;
+	letter-spacing: .3em;
+}
+
+h2{
+	font-size: 1.5em;
+	text-transform: lowercase;
+	letter-spacing: .2em;
+}
+
+h3{
+	font-size: 1.2em;
+	text-transform: lowercase;
+	letter-spacing: .2em;
+}
+
+h4{
+	font-size: 1.1em;
+	text-transform: lowercase;
+	letter-spacing: .1em;
+	margin: 10px 0;
+}
+
+.indent{
+	margin: 0 0 0 20px;
+	padding: 0;
+}
+
+.authordiv{
+	width: 170px;
+	float: left;
+	padding: 20px 20px 0 0;
+	margin: 10px 0;
+	text-align: right;
+}
+
+.replydiv{
+	width: 170px;
+	float: left;
+	padding: 20px 0 0 20px;
+	margin: 10px 0;
+}
+
+.replybody{
+	width: 340px;
+	float: left;
+	border: 1px solid #bad3e4;
+	border-radius: 20px;
+	padding: 20px;
+	margin : 10px 0;
+}
+
+.replytime{
+	font-size: .8em;
+	color: #b8c0d5;
+	text-align: right;
+}
+
+.graytext{
+	color: #b8c0d5;
+	font-size: .8em;
+}
+
+.form{
+	line-height: 150%;
+}
+
+.submit{
+	border-radius: 10%;
+	font-family: inherit;
+	text-transform: lowercase;
+	color: #bad3e4;
+	background-color: #fff;
+	font-size: .9em;
+	letter-spacing: .1em;
+	border: 2px solid #bad3e4;
+	margin: 10px 0;
+}
+
+input.submit:hover{
+	cursor: pointer;
+	color: #b8c0d5;
+	border-right: 4px solid #bad3e4;
+	border-bottom: 4px solid #bad3e4;
+}
+
+input[type="text"]{
+   font-family: inherit;
+   font-size: inherit;
+   color: #8e8e8e;
+}
+
+input[type="password"]{
+   font-family: inherit;
+   font-size: inherit;
+   color: #8e8e8e;	
+}
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */

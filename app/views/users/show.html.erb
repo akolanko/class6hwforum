@@ -1,0 +1,23 @@
+<h2><%= @user.username %>'s Page</h2>
+
+<%= link_to "[" + @user.username + "'s Topics]", user_topics_path(@user.id) %>
+
+<% if @user == current_user %>
+	<br><br>
+	<h3>Create a New Topic...</h3>
+		<div class="form">
+			<%= form_for [@user, @topic] do |f| %>
+				<%= f.label :title, "Title:" %>
+				<br>
+				<%= f.text_field :title %>
+				<br>
+				<%= f.label :body, "Content:" %>
+				<br>
+				<%= f.text_area :body %>
+				<br>
+				<%= f.submit "Post", :class => "submit" %>
+			<% end %>
+		</div>
+	<br><br>
+	<%= link_to "[Delete My Account]", user_path(current_user.id), method: :delete, confirm: "Are you sure you want to delete your account?" %>
+<% end %>

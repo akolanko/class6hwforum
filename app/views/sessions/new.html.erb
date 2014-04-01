@@ -1,0 +1,17 @@
+<h2>Sign In</h2>
+
+<div class="form">
+	<%= form_tag do %>
+		<%= label_tag :email %>
+		<br>
+		<%= text_field_tag :email %>
+		<br>
+		<%= label_tag :password %>
+		<br>
+		<%= password_field_tag :password %>
+		<br>
+		<%= submit_tag "Sign In", :class => "submit" %>
+	<% end %>
+</div>
+<br>
+Not Registered Yet? <b><%= link_to "[Sign Up]", new_user_path %></b>

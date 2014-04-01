@@ -1,0 +1,45 @@
+<h3><%= @topic.title %></h3>
+<br>
+<div class="authordiv">
+	Author: <%= link_to @topic.user.username, user_path(@topic.user) %>
+</div>
+<% if @topic.body %>
+<div class="replybody">
+	<%= @topic.body %>
+	<br><br>
+	<div class="replytime">
+		[posted <%=time_ago_in_words(@topic.created_at) %> ago]
+	</div>
+</div>
+<% end %>
+<div class="clear">
+</div>
+<% @topic.replies.each do |reply| %>
+	<div class="replybody">
+		<%= reply.body %>
+		<br><br>
+		<div class="replytime">
+			[posted <%=time_ago_in_words(reply.created_at) %> ago]
+		</div>
+	</div>
+	<div class="replydiv">
+		<%= link_to reply.user.username, user_path(reply.user) %>
+		<br>
+		<% if reply.user == current_user %>
+			<span class="graytext"><%= link_to "[Delete my Post]", user_topic_reply_path(current_user.id, @topic.id, reply.id), method: :delete, confirm: "Are you sure you want to delete your post?" %></span>
+		<% end %>
+	</div>
+	<div class="clear">
+	</div>
+<% end %>
+
+<br><br>
+
+<h4>Reply...</h4>
+<div class="form">
+	<%= form_for [@user, @topic, @reply] do |f| %>
+		<%= f.text_area :body %>
+		<br>
+		<%= f.submit "Reply", :class => "submit" %>
+	<% end %>
+</div>

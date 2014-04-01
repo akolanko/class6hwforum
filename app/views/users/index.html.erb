@@ -1,0 +1,10 @@
+<h2>All Users</h2>
+
+<div class="indent">
+	<% @users.each do |user| %>
+		<%= link_to user.username, user_path(user.id) %>
+		<br><br>
+	<% end %>
+</div>
+
+<%= link_to "[Search for User]", search_users_path, :class => "altlink" %>

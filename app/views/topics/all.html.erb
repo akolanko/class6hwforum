@@ -1,0 +1,16 @@
+<h2>All Topics</h2>
+
+<div class="indent">
+	<% @topics.each do |topic| %>
+		<h4><%= link_to topic.title, user_topic_path(topic.user, topic.id) %></h4>
+		<div class="indent">
+			<span class="graytext">
+			Author: <%= link_to topic.user.username, user_path(topic.user) %>
+			<br>
+			[posted <%=time_ago_in_words(topic.created_at) %> ago]</span>
+		</div>
+	<% end %>
+</div>
+<br>
+
+<%=link_to "[Create a new topic]", new_user_topic_path(current_user.id), :class => "altlink" %>

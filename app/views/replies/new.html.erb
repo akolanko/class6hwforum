@@ -1,0 +1,10 @@
+<h2>New reply</h2>
+<div class="form">
+	<%= form_for [@user, @topic, @reply] do |f| %>
+		<%= f.label :body, "Content:" %>
+		<br>
+		<%= f.text_area :body %>
+		<br>
+		<%= f.submit "Reply", :class => "submit" %>
+	<% end %>
+</div>

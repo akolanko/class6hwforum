@@ -1,0 +1,23 @@
+<h2>Search for User</h2>
+
+<div class="form">
+	<%= form_tag "/search/users", method: "get" do %>
+		<%= label_tag :query, "User Email:" %>
+		<br>
+		<%= text_field_tag :query %>
+		<br>
+		<%= submit_tag "Search", :class => "submit" %>
+	<% end %>
+</div>
+<br>
+<% if @users %>
+	<h4>Results:</h4>
+	<div class="indent">
+		<% @users.all.each do |user| %>
+			<%= link_to user.username, user_path(user.id) %>
+			<br>
+			<%= user.email %>
+			<br><br>
+		<% end %>
+	</div>
+<% end %>
